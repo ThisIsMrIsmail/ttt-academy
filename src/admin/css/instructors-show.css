@@ -1,0 +1,99 @@
+
+/* header link */
+#admin-instructors-title {
+  color: var(--action-color-4);
+}
+
+#instructors {
+  max-width: var(--max-width-1);
+  padding: 40px;
+  margin: 130px auto;
+  border: 1px #000000 solid;
+  background-color: white;
+}
+
+
+#instructors-top {
+  display: flex;
+  margin-bottom: 25px;
+}
+#instructors-title {
+  margin-right: auto;
+  font-family: var(--font-3);
+  font-size: 35px;
+}
+#add-instructor-button p {
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: var(--font-2);
+  color: white;
+  border: 1px solid var(--sec-color-3);
+  background-color: var(--sec-color-3);
+  transition: all 0.2s;
+}
+#add-instructor-button p:hover {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead {
+  background-color: var(--sec-color-2);
+}
+th {
+  padding: 0 15px;
+}
+th h4 {
+  text-align: left;
+  padding: 5px 0;
+}
+td {
+  padding: 10px 15px;
+}
+td p {
+  font-size: 17px;
+}
+tr {
+  border: 1px #000000 solid;
+}
+
+#remove-button {
+  padding: 7px 14px;
+  width: 90px;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: var(--font-2);
+  color: white;
+  border: 1px solid var(--action-color-3);
+  background-color: var(--action-color-3);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#remove-button:hover {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+/* style for the a tag */
+#edit-button p {
+  padding: 7px 19px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: var(--font-2);
+  color: white;
+  background-color: var(--action-color-4);
+  border: 1px var(--action-color-4) solid;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#edit-button p:hover {
+  border-color: #000000;
+  background-color: #000000;
+}

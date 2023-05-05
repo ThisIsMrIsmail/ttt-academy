@@ -1,0 +1,132 @@
+
+#cart {
+  padding: 40px;
+  margin: auto;
+  width: var(--max-width-1);
+}
+#title h1 {
+  font-size: 40px;
+  font-family: var(--font-3);
+}
+#cart-courses-count p {
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+#cart-container {
+  display: flex;
+}
+#cart-courses {
+  width: 65%;
+  margin-right: auto;
+}
+
+.course {
+  display: flex;
+  margin: 15px 0;
+  border: 1px solid;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.course:hover {
+  background-color: #FFFFFF;
+  transform: translateX(6px) translateY(-6px);
+  box-shadow: -6px 6px;
+}
+.course:hover .course-img img {
+  opacity: 1;
+}
+.course-content-info {
+  display: flex;
+  margin-right: auto;
+}
+.course-img img {
+  width: 182px;
+  margin-bottom: -4px;
+  background-color: #454545;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+.course-content {
+  padding: 15px;
+}
+.course-title {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.course-price-info {
+  padding: 15px;
+}
+.course-price p {
+  padding: 3px;
+  align-items: end;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: #FFFFFF;
+  background-color: var(--shadow-color-night);
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+.course-price p:hover {
+  background-color: var(--action-color-4);
+}
+.remove-button {
+  margin-top: 9px;
+}
+.remove-button button {
+  padding: 5px 15px;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: var(--font-2);
+  color: #FFFFFF;
+  border-radius: 5px;
+  border: 1px solid var(--action-color-3);
+  background-color: var(--action-color-3);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.remove-button button:hover {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+
+#cart-summary{
+  width: 25%;
+  padding: 0 15px;
+  align-items: center;
+  box-sizing: content-box;
+}
+#cart-total {
+  display: flex;
+}
+#cart-total h2 {
+  margin-right: auto;
+  font-size: 25px;
+}
+#cart-total p {
+  font-size: 25px;
+  font-weight: 500;
+}
+#checkout-button a p {
+  padding: 15px;
+  margin: 20px 0px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+  font-family: var(--font-2);
+  color: white;
+  border: 1px solid var(--action-color-4);
+  background-color: var(--action-color-4);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#checkout-button a p:hover {
+  background-color: #000000;
+  border-color: #000000;
+  transform: translateY(-7px) translateX(7px);
+  box-shadow: -7px 7px var(--shadow-color-dark);
+}

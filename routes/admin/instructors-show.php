@@ -1,0 +1,54 @@
+<?php
+
+require "db.php";
+
+
+// --------------------------------------------------------
+// # GET Request
+// --------------------------------------------------------
+if ($_SERVER["REQUEST_METHOD"] == "GET"):
+
+  $query = 
+  " SELECT
+      instructor_id, instructor_full_name, instructor_title,
+      instructor_email, instructor_years_of_experience
+    FROM instructors
+  ";
+  $instructors = select($query);
+
+endif;
+
+
+// --------------------------------------------------------
+// # DELETE Request
+// --------------------------------------------------------
+if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["remove"]) ):
+
+  $instructor_id = $_POST["instructor_id"];
+
+  // setting course instructor_id to NULL
+  $query =
+  " UPDATE courses
+    SET instructor_id = NULL
+    WHERE instructor_id = $instructor_id
+  ";
+  $sql->query($query);
+  
+  delete_dir($instructor_id, "instructors");
+
+  $query =
+  " DELETE FROM instructors
+    WHERE instructor_id = $instructor_id
+  ";
+  $sql->query($query);
+
+  exit(header("Location: /admin/instructors"));
+
+endif;
+
+$sql->close();
+
+
+require "./views/admin/instructors-show.view.php";
+
+?>

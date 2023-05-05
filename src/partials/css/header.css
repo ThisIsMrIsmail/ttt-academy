@@ -1,0 +1,219 @@
+
+html {
+  position: relative;
+}
+
+/* -------------------------- */
+/* # Header */
+/* -------------------------- */
+header {
+  background-color: var(--main-color);
+  font-family: var(--font-2);
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 900;
+  box-shadow: 0 40px 100px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+#navbar {
+  display: flex;
+  /* max-width: calc(var(--max-width-1) + 60px);
+  padding: 10px; */
+  padding: 10px 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#img-container {
+  display: flex;
+  align-items: center;
+}
+.platform-logo {
+  font-family: var(--font-3);
+  font-weight: 800;
+  font-size: 40px;
+}
+#nav-links {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+}
+.nav-link {
+  font-weight: 500;
+  font-size: 17px;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 10px 20px;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  color: var(--action-color-1);
+}
+#header-cart-courses-count {
+  padding: 3px;
+  width: 17px;
+  height: 17px;
+  font-size: 15px;
+  text-align: center;
+  position: fixed;
+  top: 15px;
+  transform: translateX(56px);
+  border-radius: 50%;
+  color: #FFFFFF;
+  background-color: var(--color-palette-4);
+}
+#cart-img {
+  width: 20px;
+}
+#cart-img:hover {
+  color: var(--action-color-3);
+}
+.buttons {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+}
+#log-in, #sign-up {
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+#log-in {
+  margin-right: 10px;
+  border: 1px solid black;
+  background-color: var(--main-color);
+  color: black;
+  transition: background-color .2s, box-shadow 0.2s, transform 0.2s;
+}
+#sign-up {
+  margin-right: 10px;
+  border: 1px solid var(--sec-color-3);
+  background-color: var(--sec-color-3);
+  color: white;
+  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+#log-in:hover {
+  background-color: #FFFFFF;
+  transform: translateY(-3px) translateX(3px);
+  box-shadow: -3px 3px var(--shadow-color-dark);
+}
+#sign-up:hover {
+  background-color: black;
+  border-color: black;
+  transform: translateY(-3px) translateX(3px);
+  box-shadow: -3px 3px var(--shadow-color-dark);
+}
+#user-img-container {
+  margin: 0 9px;
+  display: flex;
+  background-color: #ffffff00;
+  border: 0px;
+  align-items: center;
+}
+#user-img {
+  margin-right: 5px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+#user-dropdown {
+  position: relative;
+}
+#user-dropdown:hover #user-dropdown-info {
+  display: block;
+}
+#user-dropdown-button {
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+  padding: 2px;
+  cursor: pointer;
+  transition: background-color 0.2s, border 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+#user-dropdown-button:hover {
+  background-color: #FFFFFF;
+  border: 1px solid;
+  transform: translateY(-3px) translateX(3px);
+  box-shadow: -3px 3px var(--shadow-color-dark);
+}
+#user-img-container p {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--sec-color-3);
+  transition: color 0.2s;
+}
+#user-dropdown-svg {
+  fill: var(--sec-color-3);
+}
+#user-dropdown-info {
+  display: none;
+  min-width: 250px;
+  position: absolute;
+  top: 42px;
+  right: 0px;
+  background-color: white;
+  border: 1px solid var(--sec-color-1);
+  z-index: 999;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+#user-dropdown-info:hover {
+  border-color: #000000;
+  transform: translateY(-5px) translateX(5px);
+  box-shadow: -5px 5px var(--shadow-color-dark);
+}
+#user-info {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+#user-info img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+#user-name-email {
+  padding: 15px 10px;
+  padding-right: 0;
+}
+#user-name-email h4 {
+  color: var(--sec-color-3);
+  transition: color 0.2s;
+}
+#user-name-email h4:hover {
+  color: black;
+}
+#user-name-email p {
+  margin-top: 5px;
+  color: gray;
+  font-size: 13px;
+}
+.dropdown-info {
+  border-top: 1px solid var(--sec-color-1);
+  border-radius: 0px;
+}
+.dropdown-info div {
+  margin: 5px 0;
+  border-radius: 0;
+}
+.dropdown-info div:hover {
+  background-color: var(--main-color);
+}
+.dropdown-info div a p {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--sec-color-3);
+  transition: color 0.2s;
+}
+#user-cart-courses-count {
+  padding: 2px;
+  width: 15px;
+  height: 15px;
+  font-size: 13px;
+  text-align: center;
+  position: fixed;
+  transform: translateX(60px) translateY(-40px);
+  border-radius: 50%;
+  color: #FFFFFF;
+  background-color: var(--color-palette-4);
+}

@@ -1,0 +1,142 @@
+
+/* header link */
+#admin-instructors-title {
+  color: var(--action-color-4);
+}
+
+#instructor {
+  width: var(--max-width-1);
+  margin: 130px auto;
+  padding: 40px;
+  border: 1px #000000 solid;
+  background-color: white;
+}
+#instructor-container-title h1 {
+  margin-bottom: 15px;
+  font-size:35px;
+  font-family: var(--font-3);
+}
+#instructor-info {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+
+#instructor-left-info {
+  margin-right: auto;
+}
+.instructor-input {
+  margin-bottom: 15px;
+}
+label {
+  font-size: 17px;
+  font-weight: 500;
+}
+.instructor-input input, #courses select {
+  display: block;
+  width: 450px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  border: 1px black solid;
+}
+.instructor-input input[type="file"] {
+  cursor: pointer;
+}
+.instructor-input input:focus {
+  outline: none;
+}
+#courses select {
+  width: 482px;
+}
+#courses {
+  margin-bottom: 40px;
+}
+
+#instructor-right-info img {
+  width: 444px;
+  height: 444px;
+  border-radius: 5px;
+  border: 1px black solid;
+}
+#instructor-bio {
+  margin-bottom: 40px;
+}
+#instructor-bio-title h1 {
+  margin-bottom: 15px;
+  font-size: 35px;
+  font-family: var(--font-3);
+}
+#instructor-bio textarea {
+  width: calc(100% - 32px);
+  height: 350px;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px #000000 solid;
+}
+#instructor-bio textarea:focus {
+  outline: none;
+}
+
+#submittion-buttons {
+  margin-top: 40px;
+  display: flex;
+}
+#save-button {
+  margin-right: 25px;
+  padding: 9px 18px;
+  width: 100px;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: var(--font-2);
+  border: 1px solid #000000;
+  background-color: var(--sec-color-2);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#save-button:hover {
+  color: #FFFFFF;
+  background-color: #000000;
+  border-color: #000000;
+}
+
+#cancel-button p {
+  padding: 12px 25px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: var(--font-2);
+  color: white;
+  background-color: var(--sec-color-3);
+  border: 1px var(--sec-color-3) solid;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#cancel-button p:hover {
+  border-color: #000000;
+  background-color: #000000;
+}
+
+#remove-instructor {
+  margin-top: 100px;
+}
+#remove-instructor p, #remove-instructor strong {
+  margin-bottom: 20px;
+  color: var(--color-palette-4);
+}
+#remove-instructor button {
+  padding: 9px 18px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 17px;
+  font-family: var(--font-2);
+  color: white;
+  border: 1px solid var(--action-color-3);
+  background-color: var(--action-color-3);
+  transition: all 0.1s;
+  cursor: pointer;
+}
+#remove-instructor button:hover {
+  border-color: #000000;
+  background-color: #000000;
+}

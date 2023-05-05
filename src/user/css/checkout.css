@@ -1,0 +1,127 @@
+
+main {
+  margin: 50px 0px;
+}
+
+#checkout {
+  max-width: var(--max-width-1);
+  padding: 30px 40px;
+  margin: auto;
+  border: 1px #000000 solid;
+  background-color: white;
+}
+
+
+#checkout-top {
+  display: flex;
+  margin-bottom: 25px;
+}
+#checkout-title {
+  margin-right: auto;
+  font-family: var(--font-3);
+  font-size: 40px;
+}
+#cancel-button p {
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: var(--font-2);
+  color: white;
+  border: 1px solid var(--action-color-3);
+  background-color: var(--action-color-3);
+  transition: all 0.2s;
+}
+#cancel-button p:hover {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+
+#checkout-container {
+  display: flex;
+}
+#checkout-left {
+  width: 60%;
+  margin-right: auto;
+}
+#checkout-right {
+  width: 25%;
+}
+
+
+#checkout-note, #checkout-summary {
+  font-size: 30px;
+}
+#checkout-note-description {
+  width: 600px;
+  margin-bottom: 20px;
+}
+.checkout-input  {
+  margin: 12.5px 0;
+}
+.checkout-input label {
+  font-weight: 500;
+}
+.checkout-input input {
+  align-items: center;
+  width: 570px;
+  margin-top: 3px;
+  padding: 15px;
+  border: 1px black solid;
+  font-size: 15px;
+  font-weight: 500;
+}
+.checkout-input input:focus {
+  outline: none;
+}
+
+#copy-button {
+  padding: 5px 15px;
+  position: relative;
+  bottom: 39px;
+  left: 530px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--main-color);
+  border: 0px;
+  border-radius: 5px;
+  background-color: var(--sec-color-3);
+  cursor: pointer;
+  transition: all 0.1s;
+}
+#copy-button:hover {
+  background-color: #000000;
+}
+
+#checkout-total {
+  display: flex;
+  margin: 15px 0;
+  font-size: 25px;
+  font-weight: 500;
+}
+#checkout-total-title {
+  margin-right: auto;
+}
+#checkout-term-of-server p {
+  margin: 15px 0;
+}
+#checkout-button {
+  margin-top: 5px;
+  padding: 15px;
+  width: 100%;
+  font-size: 25px;
+  font-family: var(--font-2);
+  font-weight: 600;
+  color: white;
+  border: 1px solid var(--action-color-4);
+  background-color: var(--action-color-4);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#checkout-button:hover {
+  background-color: #000000;
+  border-color: #000000;
+  transform: translateY(-7px) translateX(7px);
+  box-shadow: -7px 7px var(--shadow-color-dark);
+}

@@ -1,0 +1,66 @@
+
+/* header link */
+#admin-payments-title {
+  color: var(--action-color-4);
+}
+
+#payments {
+  max-width: var(--max-width-1);
+  padding: 40px;
+  margin: 130px auto;
+  border: 1px #000000 solid;
+  background-color: white;
+}
+
+
+#payments-top {
+  display: flex;
+  margin-bottom: 25px;
+}
+#payments-title {
+  margin-right: auto;
+  font-family: var(--font-3);
+  font-size: 35px;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead {
+  background-color: var(--sec-color-2);
+}
+th {
+  padding: 0 15px;
+}
+th h4 {
+  text-align: left;
+  padding: 5px 0;
+}
+td {
+  padding: 10px 15px;
+}
+td p {
+  font-size: 17px;
+}
+tr {
+  border: 1px #000000 solid;
+}
+
+#view-button {
+  width: 90px;
+  padding: 7px 14px;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: var(--font-2);
+  background-color: var(--action-color-4);
+  border: 1px var(--action-color-4) solid;
+  color: white;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#view-button:hover {
+  border-color: #000000;
+  background-color: #000000;
+}

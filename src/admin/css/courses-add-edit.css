@@ -1,0 +1,228 @@
+
+/* header link */
+#admin-courses-title {
+  color: var(--action-color-4);
+}
+
+#course {
+  width: var(--max-width-1);
+  margin: 130px auto;
+  padding: 40px;
+  border: 1px #000000 solid;
+  background-color: white;
+}
+#course-title h1 {
+  margin-bottom: 15px;
+  font-size:35px;
+  font-family: var(--font-3);
+}
+#course-info {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+
+#course-left-info {
+  margin-right: auto;
+}
+.course-input {
+  margin-bottom: 15px;
+}
+label {
+  font-size: 17px;
+  font-weight: 500;
+}
+.course-input input, .course-input select {
+  display: block;
+  width: 450px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  border: 1px black solid;
+}
+.course-input input[type="file"] {
+  cursor: pointer;
+}
+.course-input select {
+  width: 482px;
+}
+.course-input input:focus,
+.course-input select:focus {
+  outline: none;
+}
+
+#course-right-info video {
+  border: 1px black solid;
+  height: 294px;
+}
+#course-description {
+  margin-bottom: 40px;
+}
+#course-description-title h1 {
+  margin-bottom: 15px;
+  font-size: 35px;
+  font-family: var(--font-3);
+}
+#course-description textarea {
+  width: calc(100% - 32px);
+  height: 350px;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px #000000 solid;
+}
+#course-description textarea:focus {
+  outline: none;
+}
+
+
+
+#levels-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+.level {
+  margin-bottom: 30px;
+}
+#levels-title {
+  margin-right: auto;
+}
+#levels-title h1 {
+  font-size: 35px;
+  font-family: var(--font-3);
+}
+#add-level button {
+  padding: 9px 18px;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: var(--font-2);
+  background-color: var(--action-color-4);
+  border: 1px var(--action-color-4) solid;
+  color: white;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#add-level button:hover {
+  border-color: #000000;
+  background-color: #000000;
+}
+.level-title h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.level-container {
+  display: flex;
+}
+.level-input {
+  margin-bottom: 15px;
+  margin-right: 20px;
+}
+.level-input input {
+  display: block;
+  width: 500px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  border: 1px black solid;
+}
+.level-input input:focus {
+  outline: none;
+}
+#level-duration input {
+  width: 250px;
+}
+#level-duration {
+  margin-right: auto;
+}
+.remove-level {
+  margin-top: 20px;
+}
+.remove-level button {
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: var(--font-2);
+  background-color: var(--action-color-3);
+  border: 1px var(--action-color-3) solid;
+  color: white;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.remove-level button:hover {
+  border-color: #000000;
+  background-color: #000000;
+}
+#level-description textarea {
+  width: calc(100% - 32px);
+  height: 150px;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px #000000 solid;
+}
+#level-description textarea:focus {
+  outline: none;
+}
+
+
+
+#submittion-buttons {
+  margin-top: 40px;
+  display: flex;
+}
+#save-button {
+  margin-right: 25px;
+  padding: 9px 18px;
+  width: 100px;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: var(--font-2);
+  border: 1px solid #000000;
+  background-color: var(--sec-color-2);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#save-button:hover {
+  color: #FFFFFF;
+  background-color: #000000;
+  border-color: #000000;
+}
+
+#cancel-button p {
+  padding: 12px 25px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: var(--font-2);
+  color: white;
+  background-color: var(--sec-color-3);
+  border: 1px var(--sec-color-3) solid;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#cancel-button p:hover {
+  border-color: #000000;
+  background-color: #000000;
+}
+
+#remove-course {
+  margin-top: 100px;
+}
+#remove-course p, #remove-course strong {
+  margin-bottom: 20px;
+  color: var(--color-palette-4);
+}
+#remove-course button {
+  padding: 9px 18px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 17px;
+  font-family: var(--font-2);
+  color: white;
+  border: 1px solid var(--action-color-3);
+  background-color: var(--action-color-3);
+  transition: all 0.1s;
+  cursor: pointer;
+}
+#remove-course button:hover {
+  border-color: #000000;
+  background-color: #000000;
+}

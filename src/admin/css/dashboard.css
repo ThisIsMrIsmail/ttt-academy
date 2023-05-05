@@ -1,0 +1,55 @@
+
+main {
+  margin: 73px 0 0 0;
+  background: url(/src/partials/img/welcome.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+#dashboard {
+  width: var(--max-width-1);
+  padding: 40px;
+  margin: 50px auto;
+}
+#dashboard-top {
+  margin-bottom: 40px;
+}
+
+#dashboard-title {
+  font-family: var(--font-3);
+  font-size: 35px;
+}
+
+.links {
+  display: flex;
+  margin-bottom: 25px;
+}
+.link {
+  margin-right: 25px;
+}
+
+.link div {
+  width: 240px;
+  padding: 20px;
+  padding-bottom: 50px;
+  border: 1px var(--action-color-4) solid;
+  border: 1px black solid;
+  background-color: var(--action-color-4);
+  background-color: var(--sec-color-3);
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+.link div p {
+  font-size: 25px;
+  font-weight: 600;
+  color: #FFFFFF;
+  transition: all 0.2s ease;
+}
+.link div:hover {
+  background-color: var(--main-color);
+  transform: translateY(-7px);
+  box-shadow: 0px 7px;
+  border-color: #000000;
+}
+.link div:hover  p {
+  color: #000000;
+}
