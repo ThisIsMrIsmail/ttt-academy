@@ -1,7 +1,5 @@
 # Trible T Academy (TTT)
-* TTT stands for Try, Train, Transform
-
-Trible T is an Academy that enables users
+TTT stands for Try, Train, Transform | Trible T is an Academy that enables users
 to register and buying courses online instead of
 doing it locally.
 
