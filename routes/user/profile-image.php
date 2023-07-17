@@ -8,20 +8,21 @@ require "db.php";
 // ====================================
 
   // checking if the user is logged in
-  if ( isset($_SESSION["user_id"]) ) {
-    $user_id = $_SESSION["user_id"];
-    // getting user information
-    $query =
-    " SELECT * FROM users
-      WHERE user_id = $user_id
-    ";
-    $user = select($query)[0];
-  } else {
-    exit(header("Location: /login"));
-  }
+  is_logged_in();
+  
+  $user_id = $_SESSION["user_id"];
+  // getting user information
+  $query =
+  " SELECT * FROM users
+    WHERE user_id = $user_id
+  ";
+  $user = select($query)[0];
 
+
+//------------------------------------
+// # Getting course view
 require "./views/user/profile-image.view.php";
-
+//------------------------------------
 
 
 // ====================================
@@ -33,8 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"  and  isset($_POST["save"]) ):
   $image = $_FILES["image"];
 
   upload_file($image, "image", "users", $user_id);
-  echodie("<script> window.location.href = '/profile/profile-image' </script>");
+  redirect("/profile/profile-image");
 
 endif;
+
+$sql->close();
 
 ?>

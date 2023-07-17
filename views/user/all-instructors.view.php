@@ -18,7 +18,15 @@
 <main>
 
 <div id="instructors">
-  <div id="instructors-title"> <h1>All Instructors</h1> </div>
+
+  <?php if ( ! $rows_of_instructors ) { ?>
+    <div id="instructors-title">
+      <h2>wait for updates</h2>
+      <h1>There are no Instructors right now</h1>
+    </div>
+  <?php } else { ?>
+    <div id="instructors-title"> <h1>All Instructors</h1> </div>
+  <?php } ?>
 
   <?php foreach ($rows_of_instructors as $key => $instructors): ?>    
     <div class="instructors-container">

@@ -62,8 +62,11 @@
       <div class="input-field" id="full-name">
         <input type="text" name="fullname" value="<?=$user['user_full_name']?>" placeholder="Full Name" required>
       </div>
-      <div class="input-field" id="age">
-        <input type="number" name="age" value="<?=$user['user_age']?>" placeholder="Age">
+      <div class="input-field" id="username" title="Username can't be edited">
+        <input type="text" name="username" value="<?=$user['username']?>" placeholder="Username" disabled>
+      </div>
+      <div class="input-field" id="age" title="Age can't be edited">
+        <input type="number" name="age" value="<?=$user['user_age']?>" placeholder="Age" disabled>
       </div>
       <div class="input-field" id="contact-number">
         <input type="number" name="contact_number" value="<?=$user['user_contact_number']?>" placeholder="Contact number">
@@ -85,6 +88,9 @@
 
 <!-- Javascript Start -->
 <?php include "./views/partials/scripts.php" ?>
+
+
+
   
 </body>
 </html>

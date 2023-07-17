@@ -1,13 +1,13 @@
 
 let modal = document.querySelector("dialog")
-let show = document.getElementById("show-dailog")
-let close  = document.getElementById("close-dailog")
+let showModal = document.getElementById("show-dialog")
+let closeModal  = document.getElementById("close-dialog")
 
 if (modal) {
-  show.addEventListener("click", () => {
+  showModal.addEventListener("click", () => {
     modal.showModal()
   })
-  close.addEventListener("click", () => {
+  closeModal.addEventListener("click", () => {
     modal.close()
   })
 }

@@ -6,27 +6,23 @@ require "db.php";
 // ====================================
 // # GET Request
 // ====================================
-// if ($_SERVER["REQUEST_METHOD"] == "GET"):
 
   // checking if the user is logged in
-  if ( isset($_SESSION["user_id"]) ) {
-    $user_id = $_SESSION["user_id"];
-    // getting user information
-    $query =
-    " SELECT * FROM users
-      WHERE user_id = $user_id
-    ";
-    $user = select($query)[0];
-  } else {
-    exit(header("Location: /login"));
-  }
+  is_logged_in();
+  
+  $user_id = $_SESSION["user_id"];
+  // getting user information
+  $query =
+  " SELECT * FROM users
+    WHERE user_id = $user_id
+  ";
+  $user = select($query)[0];
+
 
 // ------------------------------------
 // # Getting account security view
 require "./views/user/account-security.view.php";
 // ------------------------------------
-// endif;
-
 
 
 // ====================================
@@ -73,13 +69,12 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["change_email"]) ):
 
   $_SESSION["user_email"] = $new_email;
 
-  echo "<script> createAlertMessage('Email changed successfully.', 'success') </script>";
-  echodie("<script> window.location.href = '/profile/account-security' </script>");
+  notify("Email changed successfully.");
 
 endif;
 
 // ====================================
-// # POST Request (email Update)
+// # POST Request (password Update)
 // ====================================
 if ( $_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST["change_password"]) ):
 
@@ -112,8 +107,7 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST["change_password"]) )
   ";
   $sql->query($query);
 
-  echo "<script> createAlertMessage('Password changed successfully.', 'success') </script>";
-  echodie("<script> window.location.href = '/profile/account-security' </script>");
+  notify("Password changed successfully.");
 
 endif;
 

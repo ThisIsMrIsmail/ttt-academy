@@ -75,10 +75,10 @@
       <input type="hidden" name="user_id" value="<?=$user['user_id']?>">
       <div class="input-field"> <h3>Password:</h3> </div>
       <div class="input-field">
-        <input type="password" name="old_password" placeholder="Enter current password" required>
+        <input type="password" name="old_password" placeholder="Enter current password" minlength="8" required>
       </div>
       <div class="input-field">
-        <input type="password" name="new_password" placeholder="Enter new password" required>
+        <input type="password" name="new_password" placeholder="Enter new password" minlength="8" required>
       </div>
       <div id="save-button"> <button name="change_password" type="submit">Save</button> </div>
     </form>

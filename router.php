@@ -2,6 +2,10 @@
 
 // Array of allowed routes
 $routes = [
+
+  // # Home Route
+  "/"                => "/routes/user/home.php",
+
   // # Admin Routes
   "/admin/dashboard"        => "/routes/admin/dashboard.php",
   "/admin/courses"          => "/routes/admin/courses-show.php",
@@ -9,13 +13,16 @@ $routes = [
   "/admin/instructors"      => "/routes/admin/instructors-show.php",
   "/admin/instructors/add"  => "/routes/admin/instructors-add.php",
   "/admin/payments"         => "/routes/admin/payments-show.php",
-  "/admin/transfer-number"         => "/routes/admin/transfer-number.php",
+  "/admin/transfer-number"  => "/routes/admin/transfer-number.php",
 
-  // # User Routes
-  "/"                => "/routes/user/home.php",
+  // # Auth Routes
   "/signup"          => "/routes/user/signup.php",
   "/login"           => "/routes/user/login.php",
+  // "/lost-password"   => "/routes/user/lost-password.php",
+  // "/verify"          => "/routes/user/verify.php",
   "/logout"          => "/routes/user/logout.php",
+  
+  // # User Routes
   "/profile/profile-info"      => "/routes/user/profile-info.php",
   "/profile/profile-image"     => "/routes/user/profile-image.php",
   "/profile/account-security"  => "/routes/user/account-security.php",
@@ -24,7 +31,8 @@ $routes = [
   "/all-instructors" => "/routes/user/all-instructors.php",
   "/instructor"      => "/routes/user/instructor.php",
   "/cart"            => "/routes/user/cart.php",
-  "/checkout"        => "/routes/user/checkout.php"
+  "/checkout"        => "/routes/user/checkout.php",
+  "/payments"        => "/routes/user/payments.php",
 ];
 
 

@@ -1,5 +1,5 @@
-# Triple T Academy (TTT)
-TTT stands for Try, Train, Transform | Triple T is an Academy that enables users
+# Trible T Academy (TTT)
+TTT stands for Try, Train, Transform | Trible T is an Academy that enables users
 to register and buying courses online instead of
 doing it locally.
 
@@ -20,6 +20,7 @@ Time boundary: 2.5 months:
 - 1 weeks for Risks and Future Problems
 
 ### Project Stakeholders and benefits:
+
 User:
 - sign up and log in to the platform
 - edit profile (information, email, password and could delete account)

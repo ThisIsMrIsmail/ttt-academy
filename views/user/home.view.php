@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | TTT</title>
-  <meta name="viewport" content="width= initial-scale=1.0">
   <?php include "./views/partials/links.php" ?>
   <link rel="stylesheet" href="/src/user/css/home.css">
 </head>
@@ -18,7 +18,7 @@
 <main>
   <section id="welcome-section">
     <div id="welcome">
-      <div id="welcome-title"> <h1>Trible T academy</h1> </div>
+      <div id="welcome-title"> <h1>Triple T academy</h1> </div>
       <div id="welcome-msg">
         <h2>Power your Dreams, Improve your life,<br> Get skilled, Try, Train, Transform</h2>
       </div>

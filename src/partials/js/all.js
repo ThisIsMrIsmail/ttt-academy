@@ -1,10 +1,24 @@
 
+
 // Alert Message Function
 function createAlertMessage(text, alertType) {
-  // removing the alert div if exists
+  // removing the old alert div if exists
   let oldAlertMessage = document.querySelector(`.${alertType}-alert-message`);
+  
   if (oldAlertMessage) {
-    oldAlertMessage.remove();
+    let oldAlertText = oldAlertMessage.querySelector("p").textContent
+    if ( text == oldAlertText )
+      oldAlertMessage.remove()
+  }
+
+  const main = document.querySelector("main");
+
+  // checking if alert messages container exists
+  let alertMessagesContainer = document.querySelector(".alert-messages-container")
+  if ( ! alertMessagesContainer ) {
+    alertMessagesContainer = document.createElement("div");
+    alertMessagesContainer.classList.add("alert-messages-container")
+    document.body.insertBefore(alertMessagesContainer, main);
   }
 
   // creating alert div
@@ -16,7 +30,7 @@ function createAlertMessage(text, alertType) {
   // creating close button
   const closeButton = document.createElement("button")
   // getting color of the button
-  const color = alertType == "success" ? "#454545" : "#FFFFFF";
+  const color = alertType == "success" || "warning" ? "#454545" : "#FFFFFF";
   closeButton.innerHTML = `
     <svg xmlns='http://www.w3.org/2000/svg'  viewBox='0 0 24 24' fill='${color}' width='24' height='24'>
       <path d="M21 5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5zm-4.793 9.793-1.414 1.414L12 13.414l-2.793 2.793-1.414-1.414L10.586 12 7.793 9.207l1.414-1.414L12 10.586l2.793-2.793 1.414 1.414L13.414 12l2.793 2.793z"></path>
@@ -29,10 +43,9 @@ function createAlertMessage(text, alertType) {
   // appending elements
   div.append(message)
   div.append(closeButton)
-  const main = document.querySelector("main");
-  document.body.insertBefore(div, main);
+  alertMessagesContainer.prepend(div);
 
-  setTimeout(() => { div.remove() }, 7000);
+  setTimeout(() => { div.remove() }, 10000);
 }
 
 
@@ -53,7 +66,7 @@ if (number_input) {
   number_input.addEventListener("input", () => {
     var value = number_input.value;
     if (value != '') {
-      if (isNaN(value)) {
+      if ( isNaN(value) ) {
         number_input.value = "";
         input_form.reset();
       }

@@ -62,10 +62,3 @@ function remove_level(level_index) {
   level = document.getElementById(level_index)
   level.remove()
 }
-
-
-// Displaying message when submitting the form
-let form = document.getElementById("course-form")
-form.addEventListener("submit", () => {
-  createAlertMessage("Course Data Saved successfully.", "success")
-})

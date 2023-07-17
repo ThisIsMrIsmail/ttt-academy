@@ -7,7 +7,7 @@
 #instructors {
   max-width: var(--max-width-1);
   padding: 40px;
-  margin: 130px auto;
+  margin: 90px auto;
   border: 1px #000000 solid;
   background-color: white;
 }

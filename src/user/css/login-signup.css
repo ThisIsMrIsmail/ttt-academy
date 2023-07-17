@@ -1,8 +1,4 @@
 
-main {
-  margin-bottom: 0;
-}
-
 #login, #signup {
   position: relative;
   height: calc(100vh - 74px);
@@ -23,6 +19,7 @@ main {
   font-size: 27px;
 }
 .input-field {
+  display: flex;
   align-items: center;
   margin: 15px 0;
 }
@@ -35,6 +32,35 @@ main {
 }
 .input-field input:focus {
   outline: none;
+}
+#show-dialog {
+  margin: 0;
+  padding: 0;
+  padding-left: 3px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  color: blue;
+  font-weight: 100;
+  font-size: 16px;
+  cursor: pointer;
+}
+#show-dialog:hover {
+  text-decoration: underline;
+  text-underline-position: below;
+  text-underline-offset: 3px;
+  background-color: transparent;
+}
+#show-dialog:focus {
+  outline: none;
+}
+
+#username {
+  width: 251px;
+  margin-right: auto;
+}
+#age {
+  width: 50px;
 }
 #btn-field {
   padding-top: 10px;
@@ -53,21 +79,28 @@ main {
   display: inline-block;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
 #btn-field button:hover {
   border-color: black;
   background-color: black;
-  /* transform: translateY(-5px) translateX(5px);
-  box-shadow: -5px 5px var(--shadow-color-dark); */
 }
-#signup-link, #login-link {
+#signup-link,
+#login-link {
   padding-top: 5px;
 }
-#signup-link p, #login-link p {
+#signup-link p,
+#login-link p {
   margin-top: 10px;
   font-size: 16px;
 }
-#signup-link p a, #login-link p a {
+#signup-link p a,
+#login-link p a {
   color: blue;
+}
+#signup-link p a:hover,
+#login-link p a:hover {
+  text-decoration: underline;
+  text-underline-position: below;
+  text-underline-offset: 3px;
 }

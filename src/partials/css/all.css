@@ -4,13 +4,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap');
 
 :root {
-  /* color palette */
   --color-palette-1: #EAEAEA;
   --color-palette-2: #1AD0CD;
   --color-palette-3: #252A34;
   --color-palette-4: #FF2E63;
   
-  /* Main palette */
   --main-color: #EAEAEA;
   --sec-color-1: #d1d7dc;
   --sec-color-2: #87ccd0;
@@ -27,8 +25,8 @@
   --font-2: 'SF Pro Display', sans-serif;
   --font-3: 'Playfair Display', serif;
   --max-width-1: 1100px;
-  --min-height-1: 580px;
-  --max-height-1: 800px;
+  --min-height-1: 605px;
+  /* --max-height-1: 800px; */
 }
 
 
@@ -60,7 +58,6 @@
 } */
 
 
-
 /* Scroll bar */
 ::-webkit-scrollbar { width: 15px; }
 ::-webkit-scrollbar-track { background: var(--color-palette-1); }
@@ -77,38 +74,56 @@
   border-color: white;
 }
 
+::selection {
+  color: white;
+  background-color: #a500e1d7;
+}
+
+
 div, video, input, select, textarea, button, a, a p{
-  border-radius: 5px;
+  border-radius: 7px;
 }
 html {
   scroll-behavior: ease;
+  position: relative;
 }
 body {
   background-color: var(--main-color);
 }
 main {
-  min-height: calc(100vh - 73px);
-  margin-top: 74px;
+  min-height: calc(100vh - 60px);
+  margin-top: 62px;
   margin-bottom: 285px;
 }
-
+a, a p, button p, button {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
 
 /* --------------- */
 /* # Alert Message */
 /* --------------- */
-.success-alert-message,
-.failure-alert-message {
-  width: 300px;
-  display: flex;
-  align-items: center;
+.alert-messages-container {
+  width: 340px;
   position: fixed;
   top: 89px;
   right: 15px;
   z-index: 999;
+  align-items: center;
+}
+
+.success-alert-message,
+.warning-alert-message,
+.failure-alert-message {
+  width: 300px;
+  display: flex;
   padding: 10px 20px;
+  margin-bottom: 7px;
+  align-items: center;
   border: 1px var(--color-palette-3) solid;
   box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.2);
-  animation: 0.1s ease 0s 1 slideInFromTop;
+  animation: 0.2s ease 0s 1 slideInFromTop;
 }
 .success-alert-message {
   background-color: #98DDCA;
@@ -116,7 +131,11 @@ main {
 .failure-alert-message {
   background-color: #cb234b;
 }
-.success-alert-message p {
+.warning-alert-message {
+  background-color: #FFCC33;
+}
+.success-alert-message p,
+.warning-alert-message p {
   margin-right: auto;
   color: var(--color-palette-3);
   font-weight: 500;
@@ -127,6 +146,7 @@ main {
   font-weight: 500;
 }
 .success-alert-message button,
+.warning-alert-message button,
 .failure-alert-message button {
   padding: 0px;
   margin: 0px;
@@ -136,11 +156,14 @@ main {
   background-color: transparent;
   cursor: pointer;
 }
+
 @keyframes slideInFromTop {
   0% {
-    transform: translateY(-35%);
+    /* transform: scale(90%); */
+    transform: translateY(-40%);
   }
   100% {
-    transform: translateY(0);
+    /* transform: scale(100%); */
+    transform: translateY(0%);
   }
 }

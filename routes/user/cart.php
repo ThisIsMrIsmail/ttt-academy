@@ -7,6 +7,10 @@ require "db.php";
 // # GET Request
 // ====================================
 
+// checking if the user is logged in
+is_logged_in();
+
+
 $user_id = $_SESSION["user_id"];
 $query =
 " SELECT co.course_id, course_name, course_description, course_price
@@ -50,10 +54,10 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["remove_course_button
   ";
   $sql->query($query);
 
-  echodie("<script> window.location.href = '/cart' </script>");
+  notify("Course removed from cart successfully.");
+  redirect("/cart");
 
 endif;
-
 
 $sql->close();
 

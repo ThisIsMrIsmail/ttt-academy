@@ -44,21 +44,18 @@
           <form action="" method="POST">
           <!-- make DELETE Request -->
             <tr class="table-row">
-              <input type="number" name="instructor_id" value="<?=$instructor["instructor_id"]?>" hidden>
+              <input type="number" name="instructor_id" value="<?=$key+1?>" hidden>
               <td> <p> <?=$instructor["instructor_id"]?>        </p> </td>
               <td> <p> <?=$instructor["instructor_full_name"]?> </p> </td>
               <td> <p> <?=$instructor["instructor_title"]?>     </p> </td>
               <td> <p> <?=$instructor["instructor_email"]?>     </p> </td>
               <td> <p> <?=$instructor["instructor_years_of_experience"]?> years </p> </td>
-              <td style="align-items: center;">
-                <button id="remove-button" name="remove" type="submit">Remove</button> </td>
-              <td>
-                <a id="edit-button" href="/admin/instructors/<?=$instructor["instructor_id"]?>"><p>Edit</p></a> </td>
-            </tr>
+              <!-- <td style="align-items: center;"><button id="remove-button" name="remove" type="submit">Remove</button> </td> -->
+              <td><a id="edit-button" href="/admin/instructors/<?=$instructor["instructor_id"]?>"><p>Edit</p></a> </td></tr>
           </form>
         <?php endforeach; ?> 
       <?php else: ?>
-        <tr> <td colspan="6"> <h2>There are no Instructors.</h2> </td> </tr>
+        <tr> <td colspan="6"> <h2>There are no Instructors</h2> </td> </tr>
       <?php endif; ?>
     </tbody>
   </table>

@@ -42,17 +42,17 @@
           <!-- make DELETE Request -->
             <tr class="table-row">
               <input type="number" name="remove_course_id" value="<?=$course["course_id"]?>" hidden>
-              <td> <p> <?=$course["course_id"]?> </p> </td>
+              <td> <p> <?=$key+1?> </p> </td>
               <td> <p> <?=$course["course_name"]?> </p> </td>
               <td> <p> <?=$course["course_description"]?> </p> </td>
               <td> <p style="min-width: 100px;"> <?=$course["course_price"]?> $</p> </td>
-              <td style="align-items: center;"> <button id="remove-button" name="remove" type="submit">Remove</button> </td>
+              <!-- <td style="align-items: center;"> <button id="remove-button" name="remove" type="submit">Remove</button> </td> -->
               <td> <a id="edit-button" href="/admin/courses/<?=$course["course_id"]?>"><p>Edit</p></a> </td>
             </tr>
           </form>
         <?php endforeach; ?> 
       <?php else: ?>
-        <tr> <td colspan="6"> <h2>There are no Courses.</h2> </td> </tr>
+        <tr> <td colspan="6"> <h2>There are no Courses</h2> </td> </tr>
       <?php endif; ?>
     </tbody>
   </table>
@@ -63,6 +63,7 @@
 <!-- Javascript Start -->
 <?php include "./views/partials/scripts.php" ?>
 <!-- Javascript End -->
+
 
 </body>
 </html>

@@ -3,10 +3,14 @@
 require "db.php";
 
 
-// --------------------------------------------------------
+// ====================================
 // # GET Request
-// --------------------------------------------------------
-if ($_SERVER["REQUEST_METHOD"] == "GET"):
+// ====================================
+
+  // checking user eligibility
+  // - user trying to access admin side.
+  is_admin();
+
 
   $query = 
   " SELECT
@@ -16,12 +20,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"):
   ";
   $instructors = select($query);
 
-endif;
+
+//--------------------------------------
+// # Getting instructors show view
+require "./views/admin/instructors-show.view.php";
+//--------------------------------------
 
 
-// --------------------------------------------------------
+// ====================================
 // # DELETE Request
-// --------------------------------------------------------
+// ====================================
 if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["remove"]) ):
 
   $instructor_id = $_POST["instructor_id"];
@@ -42,13 +50,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["remove"]) ):
   ";
   $sql->query($query);
 
-  exit(header("Location: /admin/instructors"));
+  notify("Instructor removed successfully.");
+  redirect("/admin/instructors");
 
 endif;
 
 $sql->close();
-
-
-require "./views/admin/instructors-show.view.php";
 
 ?>

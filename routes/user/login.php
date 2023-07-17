@@ -1,63 +1,81 @@
 <?php
 
 require "db.php";
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require "vendor/autoload.php";
+
+
+//------------------------------------
+// # Getting course view
 require "views/user/login.view.php";
+//------------------------------------
 
 // ====================================
-// # GET Request
+// # POST Request (verification)
 // ====================================
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-}
+// Handleing Verification Requests
+require "routes/user/verify.php";
 
 
 // ====================================
-// # POST Request
+// # POST Request (lost password)
 // ====================================
-if (
-  $_SERVER["REQUEST_METHOD"] == "POST" and 
-  isset($_POST["submit"])
-) {
+// Handleing Lost Password Requests
+require "routes/user/lost-password.php";
+
+
+
+// ====================================
+// # POST Request (login)
+// ====================================
+if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["submit"]) ):
 
   // getting POSTed data
   $account = $_POST['account'];
   $password = $_POST['password'];
 
-  // getting all data of the users
-  $query =
-  " SELECT user_email, username, user_password
-    FROM users";
-  $users = select($query);
+  // getting all data of the users;
+  $users = select("SELECT * FROM users");
 
-  // getting all data of the admins 
-  $query =
-  " SELECT admin_username, admin_password
-    FROM admins";
-  $admins = select($query);
+  // getting all data of the admins
+  $admins = select("SELECT * FROM admins");
 
   // handling if the submitted account info exist in the database
-  $account_exist = 0;
+  $account_exists = 0;
 
   // looping through all users
   foreach ($users as $key => $user) {
     // account exists
     if ( $account === $user["user_email"] || $account === $user["username"] ) {
-      $account_exist = 1;
-      // checking for passowrd
+      $account_exists = 1;
+      // checking for passowrd          
       if ($password != $user["user_password"]) {
-        echo "<script> createAlertMessage('Wrong Passowrd!', 'failure') </script>";
-      } else {
-        // checking if submitted account is email or username
-        $is_email = filter_var($account, FILTER_VALIDATE_EMAIL, FILTER_NULL_ON_FAILURE);
-        if ( $is_email ) {
-          $user = select("SELECT * FROM users WHERE user_email = '$account'");
-        } else {
-          $user = select("SELECT * FROM users WHERE username = '$account'");
+        exit(notify("Wrong Password!", false));
+      }
+      else {
+        // checking if account is verified or not
+        if ( ! $user["user_verified"] ) {
+          // setting a session variable to verify user
+          $_SESSION["unverified_username"] = $user["username"];
+          // sending verification code
+          print("<script> createAlertMessage('Account is not Verified.', 'warning') </script>");
+          echodie("<script> dialogVerifiyDialog.showModal() </script>");
         }
+
+        // user verified deleted
+        unset($_SESSION["unverified_username"]);
+
+        // unsetting admin session to make sure that admin is logged out.
+        unset($_SESSION["admin_username"]);
         // creating session for the user so we can use it later on the website
-        $_SESSION["user_id"] = $user[0]["user_id"];
-        $_SESSION["username"] = $user[0]["username"];
-        $_SESSION["user_email"] = $user[0]["user_email"];
-        exit(header("Location: /"));
+        $_SESSION["user_id"] = $user["user_id"];
+        $_SESSION["username"] = $user["username"];
+        $_SESSION["user_email"] = $user["user_email"];
+        redirect("/");
       }
     }
   }
@@ -66,28 +84,29 @@ if (
   foreach ($admins as $key => $admin) {
     // account exists
     if ( $account == $admin["admin_username"] ) {
-      $account_exist = 1;
+      $account_exists = 1;
       // checking for passowrd
       if ($password != $admin["admin_password"]) {
-        echo "<script> createAlertMessage('Wrong Passowrd!', 'failure') </script>";
+        exit(notify("Wrong Password!", false));
       } else {
+        // unsetting user sessions to make sure that user is logged out.
+        unset($_SESSION["user_id"]);
+        unset($_SESSION["username"]);
+        unset($_SESSION["user_email"]);
         // creating session for the user so we can use it later on the website
         $_SESSION["admin_username"] = $account;
-        exit(header("Location: /admin/dashboard"));
+        redirect("/admin/dashboard");
       }
     }
   }
 
   // account does not exist
-  if ( ! $account_exist )
-    echo "<script>
-      createAlertMessage('Wrong Email or Username, or Account Does not Exist!', 'failure')
-    </script>";
+  if ( ! $account_exists ) {
+    exit(notify("Wrong Email or Username, or Account Does not Exist!", false));
+  }
 
+endif;
 
-}
-  
 $sql->close();
-
 
 ?>

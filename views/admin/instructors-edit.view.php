@@ -83,12 +83,12 @@
       <h2>Danger Zone</h2>
       <p>If you press this button, This instructor will be permanently <strong>DELETED</strong>,&nbsp;
         Including all of the instructor information.</p>
-      <button id="show-dailog" type="button">Remove Instructor</button>
+      <button id="show-dialog" type="button">Remove Instructor</button>
     </div>
     <dialog>
       <p><strong style="color: #000000;">Are you sure you want to remove this instructor?</strong></p>
-      <button id="close-dailog" type="button">Canel</button>
-      <button id="submit-dailog" name="remove_instructor" type="submit">Remove</button>
+      <button id="close-dialog" type="button">Canel</button>
+      <button id="submit-dialog" name="remove_instructor" type="submit">Remove</button>
     </dialog>
   </form>
   

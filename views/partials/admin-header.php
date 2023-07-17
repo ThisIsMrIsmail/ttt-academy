@@ -2,7 +2,7 @@
 <header>
   <div id="navbar">
     <div id="img-container">
-      <a href="/"> <p class="platform-logo" title="Trible T academy">TTT</p> </a>
+      <a href="/"> <p class="platform-logo" title="Trible T academy">Triple T</p> </a>
     </div>
     <div id="nav-links" style="margin:auto;">
       <a class="nav-link" id="admin-courses-title" href="/admin/courses">Courses</a>

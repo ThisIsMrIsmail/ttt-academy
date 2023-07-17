@@ -6,7 +6,11 @@ require "db.php";
 // ====================================
 // # GET Request
 // ====================================
-if ($_SERVER["REQUEST_METHOD"] == "GET"):
+
+  // checking user eligibility
+  // - user trying to access admin side.
+  is_admin();
+
 
   // getting all instructors so user can select them
   $query = 
@@ -15,7 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"):
   ";
   $instructors = select($query);
 
-endif;
+//-------------------------------------
+// # Getting courses add view
+require "./views/admin/courses-add.view.php";
+//-------------------------------------
 
   
 // ====================================
@@ -72,12 +79,10 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["save_button"]) ):
     }
   }
 
-  // echodie("<script> window.location.href = '/admin/courses' </script>");
-  exit(header("Location: /admin/courses"));
+  notify("Course added successfully.");
+  redirect("/admin/courses/$course_id");
 
 endif;
 
 $sql->close();
-require "./views/admin/courses-add.view.php";
-
 ?>

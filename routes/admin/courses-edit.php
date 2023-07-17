@@ -6,8 +6,12 @@ require "db.php";
 // ====================================
 // # GET Request
 // ====================================
-// if ($_SERVER["REQUEST_METHOD"] == "GET"):
-  
+
+  // checking user eligibility
+  // - user trying to access admin side.
+  is_admin();
+
+
   // getting course id from route
   global $route_to_array;
   $course_id = $route_to_array[3];
@@ -60,8 +64,10 @@ require "db.php";
   ";
   $instructors = select($query);
 
-// endif;
+//-------------------------------------
+// # Getting courses edit view
 require "./views/admin/courses-edit.view.php";
+//-------------------------------------
 
 
 // ====================================
@@ -137,7 +143,8 @@ if (
     }
   }
 
-  echodie("<script> window.location.href = '/admin/courses' </script>");
+  notify("Course data saved successfully.");
+  redirect("/admin/courses/$course_id");
   
 endif;
   
@@ -152,6 +159,29 @@ if (
 ):
 
   $course_id = $_POST["course_id"];
+
+  // checking if course is in users cart
+  $query =
+  " SELECT count(cart_id) as count
+    FROM carts
+    WHERE course_id = $course_id
+  ";
+  if ( select($query)[0]["count"] ) {
+    exit(notify("Course can\'t be deleted, Course exists in Users\' Carts", false));
+  }
+
+  // checking if course is in  payment_courses and payments
+  // table where payment status is pending
+  $query =
+  " SELECT COUNT(course_id) as count
+    FROM payments p JOIN payment_courses pc
+      ON p.payment_id = pc.payment_id
+    WHERE payment_status = 2 AND course_id = $course_id;
+  ";
+  if ( select($query)[0]["count"] ) {
+    exit(notify("Course can\'t be deleted, course exists in Pending Users\' Payments", false));
+  }
+
   // deleting course's levels
   $query =
   " DELETE FROM levels
@@ -169,13 +199,13 @@ if (
   ";
   $sql->query($query);
 
-  echodie("<script> window.location.href = '/admin/courses' </script>");
+  notify("Course removed successfully.");
+  redirect("/admin/courses");
 
 endif;
 
 
 // closing sql connection
 $sql->close();
-// require "./views/admin/courses-edit.view.php";
 
 ?>

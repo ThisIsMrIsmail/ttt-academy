@@ -1,0 +1,67 @@
+
+#payments {
+  max-width: var(--max-width-1);
+  padding: 40px;
+  margin: 90px auto;
+  border: 1px #000000 solid;
+  background-color: white;
+}
+
+
+#payments-top {
+  display: flex;
+  margin-bottom: 25px;
+}
+#payments-title {
+  margin-right: auto;
+  font-family: var(--font-3);
+  font-size: 35px;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead {
+  background-color: var(--sec-color-2);
+}
+th {
+  padding: 0 15px;
+}
+th h4 {
+  text-align: left;
+  padding: 5px 0;
+}
+td {
+  padding: 10px 15px;
+}
+td p {
+  font-size: 17px;
+}
+tr {
+  border: 1px #000000 solid;
+}
+
+.status {
+  width: fit-content;
+  padding: 5px 10px;
+  border: 1px #000000 solid;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+.rejected {
+  color: white;
+  font-weight: normal;
+  background-color: var(--action-color-3);
+}
+.pending {
+  background-color: lightblue;
+}              
+.approved {
+  background-color: lightgreen;
+}

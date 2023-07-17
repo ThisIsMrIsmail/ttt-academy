@@ -61,7 +61,7 @@
       <div id="checkout-button"> <a name="checkout_button" href="/checkout"> <p>Checkout</p> </a></div>
     </div>
     <?php else: ?>
-      <div id="cart-courses"> <h1>Cart is Empty</h1> </div>
+      <div id="cart-courses"> <h1>You didn't add Courses to Cart</h1> </div>
     <?php endif; ?>
   </div>
 

@@ -78,19 +78,46 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["add_to_cart"]) ):
 
   // checking if the user is logged in
   if ( ! isset($_SESSION["user_id"]) ) {
-    echodie("
-      <script>
-        createAlertMessage('You are not logged in!', 'failure')
-        redirect('/login')
-      </script>
-    ");
+    notify("You are not logged in!", false);
+    redirect("/login", 2);
   }
 
   // getting user id and course id
   $user_id = $_SESSION["user_id"];
   $course_id = $_POST["course_id"];
 
-  // checking if the 
+  // checking if course is paid or in pending state
+  $query =
+  " SELECT pc.payment_id
+    FROM payments p JOIN payment_courses pc
+      ON p.payment_id = pc.payment_id
+    WHERE
+      course_id = $course_id AND
+      user_id = $user_id
+  ";
+  $payment_ids = select($query);
+
+  foreach ($payment_ids as $key => $payment_id) {
+    $id = $payment_id["payment_id"];
+    $query =
+    " SELECT payment_status FROM payments
+      WHERE payment_id = $id
+    ";
+    $payment_status = (int) select($query)[0]["payment_status"];
+
+    // payment status equal zero means payment was rejected
+    // so we can enable user to submit new payment again.
+    if ( $payment_status == 0)
+      continue;
+    // payment status equal one means that user already own the course
+    elseif ( $payment_status == 1)
+      exit(notify("You have already own this course!", false));
+    // payment status equal two means that the course is in pending statge
+    elseif ( $payment_status == 2)
+      exit(notify("You have already paid this course and it\'s in the pending stage!", false));
+  }
+
+  // checking if the course already in cart
   $query = 
   " SELECT * FROM carts
     WHERE user_id = $user_id and course_id = $course_id
@@ -104,12 +131,11 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["add_to_cart"]) ):
       VALUES ($user_id, $course_id)
     ";
     $sql->query($query);
-    echo "<script> createAlertMessage('Course added to cart!', 'success') </script>";
-    echodie("<script> window.location.href = '/all-courses/$course_id'</script>");
+    notify("Course added to cart.");
   } else {
-    echo "<script> createAlertMessage('Course already in cart!', 'failure') </script>";
-    echodie("<script> window.location.href = '/all-courses/$course_id'</script>");
+    notify("Course already in cart!", false);
   }
+  redirect("/all-courses/$course_id");
 
 endif;
 
@@ -121,17 +147,40 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["buy_now"]) ):
   
   // checking if the user is logged in
   if ( ! isset($_SESSION["user_id"]) ) {
-    echodie("
-      <script>
-        createAlertMessage('You are not logged in!', 'failure')
-        redirect('/login')
-      </script>
-    ");
+    notify("You are not logged in!", false);
+    redirect("/login", 2);
   }
 
   // getting user id and course id
   $user_id = $_SESSION["user_id"];
   $course_id = $_POST["course_id"];
+
+  // checking if course is paid or in pending state
+  $query =
+  " SELECT payment_id FROM payment_courses
+    WHERE course_id = $course_id
+  ";
+  $payment_ids = select($query);
+
+  foreach ($payment_ids as $key => $payment_id) {
+    $id = $payment_id["payment_id"];
+    $query =
+    " SELECT payment_status FROM payments
+      WHERE payment_id = $id
+    ";
+    $payment_status = (int) select($query)[0]["payment_status"];
+    
+    // payment status equal zero means payment was rejected
+    // so we can enable user to submit new payment again.
+    if ( $payment_status == 0)
+      continue;
+    // payment status equal one means that user already own the course
+    elseif ( $payment_status == 1)
+      exit(notify("You have already own this course!", false));
+    // payment status equal two means that the course is in pending statge
+    elseif ( $payment_status == 2)
+      exit(notify("You have already paid this course and it\'s in the pending stage!", false));
+  }
 
   // checking if the 
   $query = 
@@ -147,12 +196,10 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["buy_now"]) ):
   ";
   $sql->query($query);
 
-  echo "<script> createAlertMessage('Course added to cart!', 'success') </script>";
-  echodie("<script> window.location.href = '/cart'</script>");
+  notify("Course added to cart.");
+  redirect("/cart");
 
 endif;
-
-
 
 $sql->close();
 

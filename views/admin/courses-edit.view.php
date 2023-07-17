@@ -134,12 +134,12 @@
       <h2>Danger Zone</h2>
       <p>If you press this button, The course will be permanently <strong>DELETED</strong>,&nbsp;
         Including all of the course content.</p>
-      <button id="show-dailog" type="button">Remove Course</button>
+      <button id="show-dialog" type="button">Remove Course</button>
     </div>
     <dialog>
       <p><strong style="color: #000000;">Are you sure you want to remove this course?</strong></p>
-      <button id="close-dailog" type="button">Canel</button>
-      <button id="submit-dailog" name="remove_course" type="submit">Remove</button>
+      <button id="close-dialog" type="button">Canel</button>
+      <button id="submit-dialog" name="remove_course" type="submit">Remove</button>
     </dialog>
   </form>
 

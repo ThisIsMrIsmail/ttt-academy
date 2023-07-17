@@ -58,9 +58,11 @@ for ($i=0; $i < count($courses); $i++) {
   }
 }
 
+//------------------------------------
+// # Getting course view
+require "./views/user/instructor.view.php";
+//------------------------------------
 
 $sql->close();
-
-require "./views/user/instructor.view.php";
 
 ?>

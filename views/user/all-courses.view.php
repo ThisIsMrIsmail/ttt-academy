@@ -19,8 +19,16 @@
 <main>
 
 <div id="courses">
-  <div id="courses-title"> <h1>All Courses</h1> </div>
   
+  <?php if ( ! $rows_of_courses ) { ?>
+    <div id="courses-title">
+      <h2>wait for updates</h2>
+      <h1>There are no Courses right now</h1>
+    </div>
+  <?php } else { ?>
+    <div id="courses-title"> <h1>All Courses</h1> </div>
+  <?php } ?>
+
   <?php foreach ($rows_of_courses as $key => $courses): ?>
     <div class="courses-container">
       <?php foreach ($courses as $key => $course): ?>

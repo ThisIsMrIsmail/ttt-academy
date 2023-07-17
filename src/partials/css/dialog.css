@@ -13,7 +13,6 @@
 #danger-zone p {
   font-size: 18px;
 }
-
 dialog {
   width: 270px;
   position: fixed;
@@ -48,7 +47,7 @@ dialog:focus {
 #delete-button {
   margin-top: 50px;
 }
-#show-dailog {
+#show-dialog {
   padding: 9px 18px;
   text-align: center;
   font-weight: 600;
@@ -60,13 +59,13 @@ dialog:focus {
   transition: all 0.1s;
   cursor: pointer;
 }
-#show-dailog:hover {
+#show-dialog:hover {
   border-color: #000000;
   background-color: #000000;
 }
 
-#close-dailog,
-#submit-dailog {
+#close-dialog,
+#submit-dialog {
   padding: 9px 18px;
   text-align: center;
   font-weight: 600;
@@ -76,17 +75,17 @@ dialog:focus {
   transition: all 0.1s;
   cursor: pointer;
 }
-#close-dailog {
+#close-dialog {
   margin-right: 5px;
   border: 1px #454545 solid;
   background-color: #454545;
 }
-#submit-dailog {
+#submit-dialog {
   border: 1px var(--action-color-3) solid;
   background-color: var(--action-color-3);
 }
-#close-dailog:hover,
-#submit-dailog:hover {
+#close-dialog:hover,
+#submit-dialog:hover {
   border-color: #000000;
   background-color: #000000;
 }

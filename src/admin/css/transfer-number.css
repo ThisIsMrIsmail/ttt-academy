@@ -1,4 +1,9 @@
 
+/* header link */
+#transfer-number-title {
+  color: var(--action-color-4);
+}
+
 main {
   margin-bottom: 0;
   margin-top: 0;

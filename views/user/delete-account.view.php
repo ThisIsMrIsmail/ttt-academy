@@ -66,12 +66,12 @@
         <strong>permanently DELETED</strong>,&nbsp; Including all of your data.
       </p>
       <div id="delete-button">
-        <button id="show-dailog" type="button">Delete Account</button>
+        <button id="show-dialog" type="button">Delete Account</button>
       </div>
       <dialog>
         <p><strong style="color: #000000;">Are you sure you want to delete your account?</strong></p>
-        <button id="close-dailog" type="button">Canel</button>
-        <button id="submit-dailog" name="delete" type="submit">Delete</button>
+        <button id="close-dialog" type="button">Canel</button>
+        <button id="submit-dialog" name="delete" type="submit">Delete</button>
       </dialog>
     </div>
   </div>
@@ -85,7 +85,6 @@
 
 <!-- Javascript Start -->
 <?php include "./views/partials/scripts.php" ?>
-<script src="/src/user/js/delete-account.js"></script>
 
 </body>
 </html>

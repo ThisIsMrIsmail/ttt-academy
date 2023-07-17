@@ -32,9 +32,11 @@ for ($i=0; $i < count($instructors); $i++) {
 
 }
 
-// closing sql connection
-$sql->close();
-
+//------------------------------------
+// # Getting course view
 require "./views/user/all-instructors.view.php";
+//------------------------------------
+
+$sql->close();
 
 ?>

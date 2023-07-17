@@ -17,7 +17,7 @@ function validFileType(file) {
 selected_image.addEventListener("change", () => {
 
   // getting selected file
-  file = selected_image.files[0]
+  let file = selected_image.files[0]
   // removing all of the child items inside preview div
   while(preview.firstChild) {
     preview.removeChild(preview.firstChild);

@@ -1,6 +1,5 @@
 
 <?php
-
   if ( isset($_SESSION["user_id"]) ) {
     require_once "db.php";
     $user_id = $_SESSION["user_id"];
@@ -16,18 +15,19 @@
 <header>
   <div id="navbar">
     <div id="img-container">
-      <a href="/"> <p class="platform-logo" title="Trible T academy">TTT</p> </a>
+      <a href="/"> <p class="platform-logo" title="Trible T academy">Triple T</p> </a>
     </div>
     <div id="nav-links">
       <a class="nav-link" href="/all-instructors">All Instructors</a>
       <a class="nav-link" href="/all-courses">All Courses</a>
       <?php if ( isset($_SESSION["username"]) ) { ?>
-        <a class="nav-link" href="/learnings">My Learning</a>
+        <!-- <a class="nav-link" href="/learnings">My Learning</a> -->
         <a class="nav-link" href="/cart">My Cart
           <?php if ( $no_courses_in_cart > 0 ) { ?>
             <div id="header-cart-courses-count"> <?=$no_courses_in_cart?> </div>
           <?php } ?>
         </a>
+        <a class="nav-link" href="/payments">My Payments</a>
       <?php } ?>
     </div>
     <div class="buttons">
@@ -73,12 +73,15 @@
             </a>
             <div class="dropdown-info">
               <div><a href="/learnings"> <p>My Learning</p> </a></div>
+              <div>
+                <a href="/cart"> <p>My Cart</p>
+                <?php if ( $no_courses_in_cart > 0 ) { ?>
+                  <div id="user-cart-courses-count"> <?=$no_courses_in_cart?> </div>
+                <?php } ?>
+                </a>
+              </div>
+              <div> <a href="/payments"> <p>My Payments</p> </a> </div>
               <div><a href="/all-courses"> <p>All Courses</p> </a></div>
-              <div> <a href="/cart"> <p>My Cart</p>
-              <?php if ( $no_courses_in_cart > 0 ) { ?>
-                <div id="user-cart-courses-count"> <?=$no_courses_in_cart?> </div>
-              <?php } ?>
-              </a> </div>
             </div>
             <div class="dropdown-info">
               <div><a href="/profile/account-security"> <p>Account Settings</p> </a></div>

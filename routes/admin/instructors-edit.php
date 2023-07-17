@@ -7,6 +7,11 @@ require "db.php";
 // # GET Request
 // ====================================
 
+  // checking user eligibility
+  // - user trying to access admin side.
+  is_admin();
+
+
 // getting course id from route
 global $route_to_array;
 $instructor_id = $route_to_array[3];
@@ -37,7 +42,6 @@ $instructor_img = glob("uploads/instructors/$instructor_id/image_$instructor_id.
 // # Getting instructors view
 require "./views/admin/instructors-edit.view.php";
 //------------------------------------
-
 
   
 // ====================================
@@ -73,7 +77,8 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["save_button"]) ):
   ";
   $sql->query($query);
 
-  echodie("<script> window.location.href = '/admin/instructors' </script>");
+  notify("Instructor data saved successfully.");
+  redirect("/admin/instructors/$instructor_id");
 
 endif;
 
@@ -105,8 +110,8 @@ if (
   ";
   $sql->query($query);
   
-  echo "<script> createAlertMessage('Instructor removed successfully.', 'success') </script>";
-  echodie("<script> window.location.href = '/admin/instructors'</script>");
+  notify("Instructor removed successfully.");
+  redirect("/admin/instructors");
 
 endif;
 

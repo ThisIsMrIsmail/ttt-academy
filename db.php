@@ -9,8 +9,6 @@ $sql = new mysqli(
   $_ENV["PORT"]
 );
 
-
-
 if ($sql->connect_error) {
   die("Connection failed: " . $sql->connect_error);
 }

@@ -7,6 +7,11 @@ require "db.php";
 // # GET Request
 // ====================================
 
+  // checking user eligibility
+  // - user trying to access admin side.
+  is_admin();
+
+
 $transfer_number = select("SELECT plat_trans_no FROM platform_transfar_numbers");
 
 //------------------------------------
@@ -41,11 +46,10 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["save"]) ):
   // executing query
   $sql->query($query);
   
-  echo "<script> createAlertMessage('Platform Transfer Number added successfully.', 'success') </script>";
-  echodie("<script> window.location.href = '/admin/transfer-number'</script>");
+  notify("Platform transfer number saved successfully");
+  redirect("/admin/transfer-number");
   
 endif;
-
 
 $sql->close();
 
