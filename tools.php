@@ -121,15 +121,15 @@ function upload_file($file, $file_type, $dirname, $id, $need_date=false) {
   }
   // % I disabled this step because it already override the stored image
   // checking if the file already exists
-  // if ( file_exists($target_file) ) {
-  //   unlink($target_file);
-  // }
+  if ( file_exists($target_file) ) {
+    unlink($target_file);
+  }
   // if everything is ok, try to upload file
   $is_uploaded = move_uploaded_file($file["tmp_name"], $target_file);
   if ( ! $is_uploaded ) {
-    exit(notify("Error uploading $file_type file!"));
+    exit(notify("Error uploading $file_type!"));
   }
-  notify("File Uploaded Successfully!");
+  notify("Uploaded successfully!");
 }
 
 

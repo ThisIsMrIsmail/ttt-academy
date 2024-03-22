@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"  and  isset($_POST["save"]) ):
   $user_id = $_POST["user_id"];
   $image = $_FILES["image"];
 
-  upload_file($image, "image", "users", $user_id);
+  upload_file($image, "image", "users", $user_id, true);
   redirect("/profile/profile-image");
 
 endif;

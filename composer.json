@@ -1,21 +1,5 @@
 {
-    "name": "ismai/htdocs",
-    "description": "TribleTAcademy: Online Courses Registration WebApp",
-    "type": "project",
-    "license": "TTT",
-    "autoload": {
-        "psr-4": {
-            "Ismai\\Htdocs\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Ismail Sherif",
-            "email": "ismailsherifwork@gmail.com"
-        }
-    ],
-    "minimum-stability": "stable",
     "require": {
-        "phpmailer/phpmailer": "^6.8"
+        "phpmailer/phpmailer": "^6.9"
     }
 }

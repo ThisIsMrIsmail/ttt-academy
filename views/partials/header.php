@@ -40,13 +40,15 @@
             <div  id="user-img-container">
               <?php
                 $id = $user_id;
-                if ( file_exists("uploads/users/$id") ) {
-                  $img = glob("uploads/users/$id/image_$id.*")[0];
+                if ( file_exists("uploads/users/$id") )
+                  if ( glob("uploads/users/$id/image_$id.*")[0] )
+                    $img = glob("uploads/users/$id/image_$id.*")[0];
+                  else
+                    $img = "src/partials/user-img/user-img-0.jpg";
+                else
+                  $img = "src/partials/user-img/user-img-0.jpg";
               ?>
-                <img id="user-img" src="/<?=$img?>" alt="">
-              <?php } else { ?>
-                <img id="user-img" src="/src/partials/user-img/user-img-0.jpg" alt="">
-              <?php } ?>
+              <img id="user-img" src="/<?=$img?>" alt="">
               <p> <?=$_SESSION["username"]?> </p>
               <svg id="user-dropdown-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
                 <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
@@ -58,13 +60,15 @@
               <div id="user-info">
                 <?php
                   $id = $user_id;
-                  if ( file_exists("uploads/users/$id") ) {
-                    $img = glob("uploads/users/$id/image_$id.*")[0];
+                  if ( file_exists("uploads/users/$id") )
+                    if ( glob("uploads/users/$id/image_$id.*")[0] )
+                      $img = glob("uploads/users/$id/image_$id.*")[0];
+                    else
+                      $img = "src/partials/user-img/user-img-0.jpg";
+                  else
+                    $img = "src/partials/user-img/user-img-0.jpg";
                 ?>
-                  <img src="/<?=$img?>" alt="">
-                <?php } else { ?>
-                  <img src="/src/partials/user-img/user-img-0.jpg" alt="">
-                <?php } ?>
+                <img src="/<?=$img?>" alt="">
                 <div id="user-name-email">
                   <h4> <?=$_SESSION["username"]?> </h4>
                   <p> <?=$_SESSION["user_email"]?> </p>

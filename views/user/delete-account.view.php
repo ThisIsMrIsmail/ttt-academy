@@ -26,13 +26,15 @@
       <div id="profile-image">
         <?php
           $id = $user['user_id'];
-          if ( file_exists("uploads/users/$id") ) {
-            $img = glob("uploads/users/$id/image_$id.*")[0];
+          if ( file_exists("uploads/users/$id") )
+            if ( glob("uploads/users/$id/image_$id.*")[0] )
+              $img = glob("uploads/users/$id/image_$id.*")[0];
+            else
+              $img = "src/partials/user-img/user-img-0.jpg";
+          else
+            $img = "src/partials/user-img/user-img-0.jpg";
         ?>
-          <img src="/<?=$img?>" alt="">
-        <?php } else { ?>
-          <img src="/src/partials/user-img/user-img-0.jpg" alt="">
-        <?php } ?>
+        <img src="/<?=$img?>" alt="">
       </div>
       <div id="profile-name"> <h3><?=$user['user_full_name']?></h3> </div>
     </div>
