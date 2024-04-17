@@ -1,0 +1,38 @@
+/* Page loader */
+/* My own page loader */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: #FFFFFF;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.75s, visibility 0.75s;
+}
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.loader::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-color: #ffffff;
+  border: 6px solid #ffffff90;
+  border-right-color: var(--color-palette-4);
+  border-left-color: var(--color-palette-4);
+  border-bottom-color: var(--color-palette-4);
+  border-radius: 100%;
+  animation: loading 0.75s ease infinite;
+}
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  } to {
+    transform: rotate(1turn);
+  }
+}
+/* End of page loader */

@@ -1,0 +1,201 @@
+
+/* ---------------------- */
+/*# Welcome Section */
+/* ---------------------- */
+#welcome-section {
+  height: calc(100vh - 74px);
+  min-height: var(--min-height-1);
+  max-height: var(--max-height-1);
+  display: flex;
+  align-items: center;
+  background: url(/src/partials/img/welcome.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+#welcome {
+  width: var(--max-width-1);
+  margin: auto;
+  padding: 40px;
+  align-items: center;
+}
+#welcome-title h1, #welcome-msg h2 {
+  margin-bottom: 20px;
+  font-family: var(--font-3);
+}
+#welcome-title h1 {
+  font-size: 75px;
+}
+#welcome-msg h2 {
+  font-size: 30px;
+}
+.get-started-btn-1 {
+  margin-top: 80px;
+}
+
+
+/* ---------------------- */
+/*# Courses Section */
+/* ---------------------- */
+#courses-section {
+  height: calc(100vh - 73px);
+  min-height: var(--min-height-1);
+  max-height: var(--max-height-1);
+  background-color: var(--main-color);
+  display: flex;
+}
+#courses {
+  width: var(--max-width-1);
+  margin: auto;
+  padding: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+#courses-container {
+  display: flex;
+}
+.course-box {
+  width: 330px;
+  margin: auto;
+  border: 1px black solid;
+  background-color: var(--main-color);
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.course-box:hover {
+  background-color: #FFFFFF;
+  transform: translateY(-8px) translateX(8px);
+  box-shadow: -8px 8px var(--shadow-color-night);
+}
+.course-img img {
+  width: 330px;
+}
+.course-info {
+  min-height: 210px;
+  padding: 20px;
+  padding-top: 15px;
+}
+.course-title h2 {
+  font-family: var(--font-2);
+  font-size: 22px;
+  color:black;
+}
+.course-description{
+  margin-top: 10px;
+  font-family: var(--font-2);
+  font-size: 15px;
+  color:black;
+}
+.course-price {
+  margin-top: 10px;
+}
+.course-price h3 {
+  display: inline;
+  padding: 5px;
+  text-align: right;
+  font-size: 20px;
+  right: 0;
+  color: #FFFFFF;
+  background-color: var(--shadow-color-night);
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+.course-price h3:hover {
+  background-color: var(--action-color-4);
+}
+
+/* ---------------------- */
+/*# Numbers Section */
+/* ---------------------- */
+#numbers-section {
+  height: 40vh;
+  min-height: 350px;
+  /* min-height: var(--min-height-1); */
+  max-height: var(--max-height-1);
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+}
+#numbers {
+  width: var(--max-width-1);
+  margin: auto;
+  padding: 40px;
+  padding-bottom: 100px;
+}
+#numbers-container {
+  display: flex;
+}
+.number {
+  margin: auto;
+  padding: 20px;
+  width: 300px;
+  border: 1px black solid;
+  background-color: var(--main-color);
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.number h2, .number span {
+  font-weight: 600;
+}
+.number h2 {
+  font-size: 40px;
+}
+.number span {
+  font-size: 30px;
+}
+.students {
+  background-color: var(--sec-color-1);
+}
+.postive-reviews {
+  background-color: var(--sec-color-1);
+}
+.instructors {  
+  background-color: var(--sec-color-1);
+}
+
+/* ---------------------- */
+/*# Get Started Section */
+/* ---------------------- */
+#get-started-section {
+  padding-bottom: 80px;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+}
+#get-started {
+  width: var(--max-width-1);
+  margin: auto;
+  padding: 40px;
+  text-align: center;
+}
+#get-started-msg {
+  font-family: var(--font-3);
+  font-size: 50px;
+  font-weight: 700;
+}
+.get-started-btn-2 {
+  margin-top: 50px;
+}
+
+/* Global Button */
+/* - Welcome Section */
+/* - Get Started Section */
+.get-started-btn a{
+  padding: 20px 40px;
+  background-color: var(--main-color);
+  border: 1px black solid;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.get-started-btn a:hover {
+  background-color: #FFFFFF;
+  transform: translateY(-8px) translateX(8px);
+  box-shadow: -8px 8px var(--shadow-color-night);
+}

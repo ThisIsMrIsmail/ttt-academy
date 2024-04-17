@@ -1,0 +1,106 @@
+
+#login, #signup {
+  position: relative;
+  height: calc(100vh - 74px);
+}
+#login-container, #signup-container {
+  width: 360px;
+  padding: 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFFFFF;
+  border: 1px black solid;
+}
+#login-title h1, #signup-title h1 {
+  margin-bottom: 25px;
+  font-family: var(--font-3);
+  font-size: 27px;
+}
+.input-field {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+.input-field input {
+  width: 338px;
+  padding: 15px 10px;
+  border: 1px black solid;
+  font-size: 15px;
+  font-weight: 500;
+}
+.input-field input:focus {
+  outline: none;
+}
+#show-dialog {
+  margin: 0;
+  padding: 0;
+  padding-left: 3px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  color: blue;
+  font-weight: 100;
+  font-size: 16px;
+  cursor: pointer;
+}
+#show-dialog:hover {
+  text-decoration: underline;
+  text-underline-position: below;
+  text-underline-offset: 3px;
+  background-color: transparent;
+}
+#show-dialog:focus {
+  outline: none;
+}
+
+#username {
+  width: 251px;
+  margin-right: auto;
+}
+#age {
+  width: 50px;
+}
+#btn-field {
+  padding-top: 10px;
+}
+#btn-field button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px 0px;
+  border: none;
+  background-color: var(--action-color-4);
+  border: 1px var(--action-color-4) solid;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#btn-field button:hover {
+  border-color: black;
+  background-color: black;
+}
+#signup-link,
+#login-link {
+  padding-top: 5px;
+}
+#signup-link p,
+#login-link p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+#signup-link p a,
+#login-link p a {
+  color: blue;
+}
+#signup-link p a:hover,
+#login-link p a:hover {
+  text-decoration: underline;
+  text-underline-position: below;
+  text-underline-offset: 3px;
+}
