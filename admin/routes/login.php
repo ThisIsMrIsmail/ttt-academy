@@ -33,13 +33,9 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["submit"]) ):
       if ($password != $admin["admin_password"]) {
         exit(notify("Wrong Password!", false));
       } else {
-        // unsetting user sessions to make sure that user is logged out.
-        unset($_SESSION["user_id"]);
-        unset($_SESSION["username"]);
-        unset($_SESSION["user_email"]);
         // creating session for the user so we can use it later on the website
         $_SESSION["admin_username"] = $account;
-        redirect("/admin/dashboard");
+        redirect("/");
       }
     }
   }

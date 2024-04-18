@@ -67,7 +67,7 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["approve"])):
   }
 
   notify("Payment Approved Successfully.");
-  redirect("/admin/payments");
+  redirect("/payments");
 
 endif;
 
@@ -86,7 +86,7 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["reject"])):
   ";
   $sql->query($query);
   notify("Payment Rejected Successfully.");
-  redirect("/admin/payments");
+  redirect("/payments");
 
 endif;
 

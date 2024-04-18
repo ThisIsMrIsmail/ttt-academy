@@ -80,7 +80,7 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["save_button"]) ):
   }
 
   notify("Course added successfully.");
-  redirect("/admin/courses/$course_id");
+  redirect("/courses/$course_id");
 
 endif;
 

@@ -78,7 +78,7 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["save_button"]) ):
   $sql->query($query);
 
   notify("Instructor data saved successfully.");
-  redirect("/admin/instructors/$instructor_id");
+  redirect("/instructors/$instructor_id");
 
 endif;
 
@@ -111,7 +111,7 @@ if (
   $sql->query($query);
   
   notify("Instructor removed successfully.");
-  redirect("/admin/instructors");
+  redirect("/instructors");
 
 endif;
 

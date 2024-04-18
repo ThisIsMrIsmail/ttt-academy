@@ -32,7 +32,10 @@ header {
 }
 #nav-links {
   display: flex;
-  margin-left: auto;
+  align-items: center;
+}
+#logout {
+  display: flex;
   align-items: center;
 }
 .nav-link {

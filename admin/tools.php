@@ -20,18 +20,11 @@ function abort($code=404) {
 }
 
 
-// logged in checking function
-function is_logged_in() {
-  if ( ! isset($_SESSION["user_id"]) )
-    redirect("/login");
-}
-
-
 // checks if admin is logged in or not to manage
 // user eligibility and not reach admin side
 function is_admin() {
   if ( ! isset($_SESSION["admin_username"]) )
-    redirect("/");
+    redirect("/login");
 }
 
 

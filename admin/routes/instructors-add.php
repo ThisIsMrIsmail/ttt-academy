@@ -70,7 +70,7 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["save_button"]) ):
   }
 
   notify("Instructor added successfully.");
-  redirect("/admin/instructors/$instructor_id");
+  redirect("/instructors/$instructor_id");
 
 endif;
 

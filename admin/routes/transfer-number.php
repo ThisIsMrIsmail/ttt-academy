@@ -47,7 +47,7 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["save"]) ):
   $sql->query($query);
   
   notify("Platform transfer number saved successfully");
-  redirect("/admin/transfer-number");
+  redirect("/transfer-number");
   
 endif;
 

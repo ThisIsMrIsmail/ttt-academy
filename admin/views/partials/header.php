@@ -17,23 +17,9 @@
     <div id="img-container">
       <a href="/"> <p class="platform-logo" title="Trible T academy">Triple T</p> </a>
     </div>
-    <div id="nav-links">
-      <!-- <a class="nav-link" href="/all-instructors">All Instructors</a> -->
-      <!-- <a class="nav-link" href="/all-courses">All Courses</a> -->
-      <?php if ( isset($_SESSION["username"]) ) { ?>
-        <!-- <a class="nav-link" href="/learnings">My Learning</a> -->
-        <!-- <a class="nav-link" href="/cart">My Cart -->
-          <?php if ( $no_courses_in_cart > 0 ) { ?>
-            <!-- <div id="header-cart-courses-count"> <?=$no_courses_in_cart?> </div> -->
-          <?php } ?>
-        <!-- </a> -->
-        <!-- <a class="nav-link" href="/payments">My Payments</a> -->
-      <?php } ?>
-    </div>
     <div class="buttons">
       <?php if ( ! isset($_SESSION["username"]) and ! isset($_SESSION["user_password"]) ): ?>
-        <a id="log-in" href="/login">Log in</a>
-        <!-- <a id="sign-up" href="/signup">Sign up</a> -->
+        <a id="log-in" href="/logout">Log Out</a>
       <?php else: ?>
         <div id="user-dropdown">
           <button id="user-dropdown-button" type="button">

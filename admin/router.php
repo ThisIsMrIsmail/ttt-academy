@@ -5,6 +5,7 @@ $routes = [
 
   "/"                 => "/routes/dashboard.php",
   "/login"            => "/routes/login.php",
+  "/logout"           => "/routes/logout.php",
   "/courses"          => "/routes/courses-show.php",
   "/courses/add"      => "/routes/courses-add.php",
   "/instructors"      => "/routes/instructors-show.php",

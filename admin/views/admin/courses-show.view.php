@@ -21,7 +21,7 @@
 <div id="courses">
   <div id="courses-top">
     <h1 id="courses-title">Courses</h1>
-    <a id="add-course-button" href="/admin/courses/add"> <p>Add Course</p> </a>
+    <a id="add-course-button" href="/courses/add"> <p>Add Course</p> </a>
   </div>
 
   <table>
@@ -47,7 +47,7 @@
               <td> <p> <?=$course["course_description"]?> </p> </td>
               <td> <p style="min-width: 100px;"> <?=$course["course_price"]?> $</p> </td>
               <!-- <td style="align-items: center;"> <button id="remove-button" name="remove" type="submit">Remove</button> </td> -->
-              <td> <a id="edit-button" href="/admin/courses/<?=$course["course_id"]?>"><p>Edit</p></a> </td>
+              <td> <a id="edit-button" href="/courses/<?=$course["course_id"]?>"><p>Edit</p></a> </td>
             </tr>
           </form>
         <?php endforeach; ?> 

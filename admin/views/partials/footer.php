@@ -24,7 +24,7 @@
         <div class="footer-link"> <a href="/"> <p>WhatsApp</p> </a> </div>
       </div>
     </div>
-    <div id="footer-copyright"> <p>© 2022 - <span id="current-year"></span> | Trible T academy</p> </div>
+    <div id="footer-copyright"> <p>© 2022 - <span id="current-year"></span> | Triple T academy</p> </div>
   </div>
 </footer>
 

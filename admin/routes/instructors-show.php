@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["remove"]) ):
   $sql->query($query);
 
   notify("Instructor removed successfully.");
-  redirect("/admin/instructors");
+  redirect("/instructors");
 
 endif;
 

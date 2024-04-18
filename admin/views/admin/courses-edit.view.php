@@ -117,7 +117,7 @@
     <div id="submittion-buttons">
       <input type="hidden" name="action" value="PUT">
       <button id="save-button" name="save_button" type="submit">Save</button>
-      <a id="cancel-button" href="/admin/courses"> <p>Cancel</p> </a>
+      <a id="cancel-button" href="/courses"> <p>Cancel</p> </a>
     </div>
   </form>
 
