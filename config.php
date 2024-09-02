@@ -9,6 +9,6 @@ $_ENV["PORT"] = 3306;
 
 $_ENV["TTT_SMTP_NAME"] = "TribleTAcademy";
 $_ENV["TTT_SMTP_EMAIL"] = "TribleTAcademy@hotmail.com";
-$_ENV["TTT_SMTP_EMAIL_PASSWORD"] = "";
+$_ENV["TTT_SMTP_EMAIL_PASSWORD"] = "password#ttt";
 
 ?>
